@@ -34,7 +34,7 @@
     NSArray *columnStore = [[NSUserDefaults standardUserDefaults] arrayForKey:@"ColumnsUserDefault"];
     NSMenu *tableHeaderContextMenu = [[NSMenu alloc] initWithTitle:@""];
     [[playlistView headerView] setMenu:tableHeaderContextMenu];
-    
+
     NSArray *tableColumns = [NSArray arrayWithArray:[playlistView tableColumns]];
     for (NSTableColumn *column in tableColumns)
     {
@@ -45,7 +45,7 @@
         [item setState:columnStore ? NSOffState : NSOnState];
         if (columnStore) [playlistView removeTableColumn:column];
     }
-    
+
     NSTableColumn *column;
 	for (NSDictionary *colinfo in columnStore)
     {
@@ -71,16 +71,16 @@
     BOOL on = ([sender state] == NSOnState);
     [sender setState:on ? NSOffState : NSOnState];
     NSTableColumn *column = [sender representedObject];
-    
+
     if (on)
-    {		
+    {
         [playlistView removeTableColumn:column];
         [playlistView sizeLastColumnToFit];
     } else {
         [playlistView addTableColumn:column];
         [playlistView sizeToFit];
     }
-    
+
     [playlistView setNeedsDisplay:YES];
 }
 
@@ -108,16 +108,16 @@
 {
 	NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager]
 		enumeratorAtPath:aDirectory];
-	
+
 	NSString *fileName, *filePath;
 	GTrack *track;
 	BOOL isDirectory;
 	while (fileName = [dirEnum nextObject]) {
 		filePath = [aDirectory stringByAppendingPathComponent:fileName];
-        
+
         if (isHidden(filePath) == YES)
             continue;
-		
+
         [[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDirectory];
 
 		if (isDirectory == YES)
@@ -199,7 +199,7 @@
 	BOOL isDirectory;
 	for (NSString *currentFile in files) {
 		[[NSFileManager defaultManager] fileExistsAtPath:currentFile isDirectory:&isDirectory];
-        
+
 		if (isDirectory == NO) {
 			draggedTrack = [[GTrack alloc] initWithFile:currentFile];
         	[playlist addTrack:draggedTrack];
@@ -211,7 +211,7 @@
     NSString *aSDirectory = [paths objectAtIndex:0];
     NSString *goonjSupportDirectory = [aSDirectory stringByAppendingString:@"/Goonj"];
     NSString *nowPlayingList = [goonjSupportDirectory stringByAppendingString:@"/nowplaying.xspf"];
-    
+
 	[playlist savePlaylistAs:nowPlayingList];
     [playlistView reloadData];
     return YES;

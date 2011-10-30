@@ -29,7 +29,7 @@
 @interface GAppController : NSObject {
 	IBOutlet GMainWindowController *mainWindowController;
     IBOutlet GPreferenceController *prefController;
-    
+
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification;

@@ -29,7 +29,7 @@
 
 @interface GPlaylistController : NSObject {
 	GPlaylist *playlist;
-	
+
 	IBOutlet NSWindow *mainWindow;
 	IBOutlet NSTableView *playlistView;
 }

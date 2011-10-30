@@ -36,7 +36,7 @@
 		return [[GXSPFPlaylist alloc] initWithFile:aURL];
 	else if ([ext caseInsensitiveCompare:@"m3u"] == NSOrderedSame)
 		NSLog(@"initialize M3U playlist");
-	
+
 	return nil;
 }
 

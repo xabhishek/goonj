@@ -32,7 +32,7 @@
 - (id) initWithFile:(NSString *)aPath
 {
 	self = [super init];
-    
+
 	if (self) {
 		properties = [[NSMutableDictionary alloc] initWithCapacity:0];
         [self setValue:aPath forKey:@"location"];
@@ -55,7 +55,7 @@
 
 - (void) readPropertiesFromID3Tags
 {
-    
+
 }
 
 - (NSString *)path
