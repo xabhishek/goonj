@@ -31,10 +31,10 @@
 	if (self = [super init]) {
         trackList = [[NSMutableArray alloc] initWithCapacity:0];
         aURL = [aURL stringByExpandingTildeInPath];
-        
+
         if ([[NSFileManager defaultManager] fileExistsAtPath:aURL] == YES)
             [self loadPlaylist:[aURL stringByExpandingTildeInPath]];
-        
+
         return self;
     }
 
@@ -134,7 +134,7 @@
 
     // Loading the playlist was a success, so clear the old playlist.
     [trackList removeAllObjects];
-	
+
     NSXMLElement *XSPFRoot = [XSPFDoc rootElement];
 
 	// There should be only ONE tracklist in a playlist, anyway.

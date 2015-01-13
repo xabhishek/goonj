@@ -1,6 +1,6 @@
 /*
 	File: GMainWindowController.m
-	Description: The Goonj main window controller. For now, this controller 
+	Description: The Goonj main window controller. For now, this controller
 	manages most interface elements. Some functionality should be moved out
 	later. File's Owner and delegate of MainWindow.nib (interface).
 
@@ -35,7 +35,7 @@
 			return YES;
 		else
 			return NO;
-	
+
 	// Return YES by default.
 	return YES;
 }

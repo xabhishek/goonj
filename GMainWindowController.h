@@ -1,6 +1,6 @@
 /*
 	File: GMainWindowController.h
-	Description: The Goonj main window controller. For now, this controller 
+	Description: The Goonj main window controller. For now, this controller
 	manages most interface elements. Some functionality should be moved out
 	later. File's Owner and delegate of MainWindow.xib (interface).
 
